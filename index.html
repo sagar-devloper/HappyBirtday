@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Happy Birthday, Dear😘</title>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, #ffc0cb, #e6e6fa, #add8e6);
+        }
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        h1, h2 {
+            color: #ff69b4;
+            margin-bottom: 1rem;
+        }
+        .cake {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        .candle {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 20px;
+            background-color: #ff4500;
+            border-radius: 2px;
+        }
+        .flame {
+            width: 8px;
+            height: 8px;
+            background-color: #ffff00;
+            border-radius: 50%;
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: flicker 0.3s infinite alternate;
+        }
+        @keyframes flicker {
+            0% { transform: translateX(-50%) scale(1); }
+            100% { transform: translateX(-50%) scale(0.9); }
+        }
+        .message, .question, .love-letter, .silly-compliment, .image-upload, .final-wishes {
+            margin-bottom: 1rem;
+            display: none;
+        }
+        .icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .icon {
+            font-size: 2rem;
+        }
+        button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 0.5rem;
+        }
+        button:hover {
+            background-color: #ff1493;
+        }
+        input[type="text"], input[type="file"] {
+            padding: 0.5rem;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            margin-bottom: 1rem;
+        }
+        .cute-girl {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+        }
+        .cute-girl-1 {
+            top: -50px;
+            left: -50px;
+            animation: float 3s ease-in-out infinite;
+        }
+        .cute-girl-2 {
+            bottom: -50px;
+            right: -50px;
+            animation: float 3s ease-in-out infinite 1.5s;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .love-letter-options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .love-letter-option {
+            background-color: #ffd1dc;
+            border: none;
+            padding: 0.25rem 0.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .love-letter-option:hover {
+            background-color: #ff69b4;
+            color: white;
+        }
+        #generatedLetter, #sillyCompliment {
+            background-color: #fff0f5;
+            border: 2px solid #ff69b4;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+        #sillyCompliment {
+            font-size: 1.2rem;
+            color: #ff1493;
+        }
+        #uploadedImage {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+        #finalWishes {
+            font-size: 1.2rem;
+            color: #ff1493;
+            margin-top: 1rem;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        #emotes {
+            font-size: 2rem;
+            margin-top: 1rem;
+            animation: dance 1s infinite;
+        }
+        @keyframes dance {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+    </head>
+    <body>
+        <div class="card">
+            <svg class="cute-girl cute-girl-1" viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="45" fill="#FFB6C1" />
+                <circle cx="35" cy="40" r="5" fill="#000" />
+                <circle cx="65" cy="40" r="5" fill="#000" />
+                <path d="M 40 60 Q 50 70 60 60" stroke="#000" stroke-width="3"
+                    fill="none" />
+            </svg>
+            <svg class="cute-girl cute-girl-2" viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="45" fill="#FFB6C1" />
+                <circle cx="35" cy="40" r="5" fill="#000" />
+                <circle cx="65" cy="40" r="5" fill="#000" />
+                <path d="M 40 60 Q 50 70 60 60" stroke="#000" stroke-width="3"
+                    fill="none" />
+                <path d="M 30 30 Q 50 10 70 30" stroke="#FF69B4"
+                    stroke-width="3" fill="none" />
+            </svg>
+            <h1>Happy Birthday 🎂</h1>
+            <div class="cake">
+                🎂
+                <div class="candle">
+                    <div class="flame"></div>
+                </div>
+            </div>
+            <button id="blowButton">Blow out the candle 🕯️</button>
+            <div id="message" class="message">
+                <p>
+                    
+                    "Happy Birthday! 🌟
+                     May your life continue to be an exciting adventure with new paths to explore,
+                     new dreams to chase, and new heights to conquer. Here's to another year of unforgettable journeys 
+                     and new discoveries. Let the fun begin!"
+                </p>
+                <div class="icons">
+                    <span class="icon">❤️</span>
+                    <span class="icon">🎁</span>
+                    <span class="icon">🎵</span>
+                </div>
+            </div>
+            <div id="question" class="question">
+                <p>What's your favorite memory of us together?</p>
+                <input type="text" id="memoryInput"
+                    placeholder="Type your answer here">
+                <button id="submitMemory">Submit</button>
+            </div>
+            <div id="loveLetter" class="love-letter">
+                <h2>Create Your Compliment Letter</h2>
+                <p>Select words to create a special letter:</p>
+                <div class="love-letter-options" id="loveLetterOptions"></div>
+                <div id="generatedLetter"></div>
+            </div>
+            <div id="sillyComplimentGenerator" class="silly-compliment">
+                <h2>Silly Compliment Generator</h2>
+                <p>Click the button for an over-the-top compliment!</p>
+                <button id="generateCompliment">Generate Silly
+                    Compliment</button>
+                <div id="sillyCompliment"></div>
+            </div>
+            <div id="imageUpload" class="image-upload">
+                <h2>Upload a Picture</h2>
+                <p>Upload or paste Your lovely Photo</p>
+                <input type="file" id="imageInput" accept="image/*">
+                <p>Or paste an image here:</p>
+                <div id="pasteArea" contenteditable="true"
+                    style="border: 1px solid #ccc; padding: 10px; min-height: 50px;"></div>
+                <button id="submitImage">Submit Image</button>
+            </div>
+            <div id="finalWishes" class="final-wishes">
+                <img id="uploadedImage" alt="Your girlfriend's picture"
+                    style="display: none;">
+                <div id="birthdayWishes"></div>
+                <div id="emotes"></div>
+            </div>
+            <button id="nextButton" style="display: none;">Next</button>
+            <button id="celebrateButton" style="display: none;">Celebrate
+                More!</button>
+        </div>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+        <script>
+        const blowButton = document.getElementById('blowButton');
+        const celebrateButton = document.getElementById('celebrateButton');
+        const nextButton = document.getElementById('nextButton');
+        const message = document.getElementById('message');
+        const question = document.getElementById('question');
+        const loveLetter = document.getElementById('loveLetter');
+        const sillyComplimentGenerator = document.getElementById('sillyComplimentGenerator');
+        const imageUpload = document.getElementById('imageUpload');
+        const finalWishes = document.getElementById('finalWishes');
+        const flame = document.querySelector('.flame');
+        const candle = document.querySelector('.candle');
+        const memoryInput = document.getElementById('memoryInput');
+        const submitMemory = document.getElementById('submitMemory');
+        const loveLetterOptions = document.getElementById('loveLetterOptions');
+        const generatedLetter = document.getElementById('generatedLetter');
+        const generateCompliment = document.getElementById('generateCompliment');
+        const sillyCompliment = document.getElementById('sillyCompliment');
+        const imageInput = document.getElementById('imageInput');
+        const pasteArea = document.getElementById('pasteArea');
+        const submitImage = document.getElementById('submitImage');
+        const uploadedImage = document.getElementById('uploadedImage');
+        const birthdayWishes = document.getElementById('birthdayWishes');
+        const emotes = document.getElementById('emotes');
+
+        let currentStep = 0;
+        const steps = ['message', 'question', 'loveLetter', 'sillyComplimentGenerator', 'imageUpload', 'finalWishes'];
+
+        blowButton.addEventListener('click', () => {
+            flame.style.animation = 'none';
+            setTimeout(() => {
+                candle.style.display = 'none';
+                message.style.display = 'block';
+                blowButton.style.display = 'none';
+                nextButton.style.display = 'inline-block';
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: { y: 0.6 }
+                });
+            }, 1000);
+        });
+
+        nextButton.addEventListener('click', () => {
+            document.getElementById(steps[currentStep]).style.display = 'none';
+            currentStep++;
+            if (currentStep < steps.length) {
+                document.getElementById(steps[currentStep]).style.display = 'block';
+                if (currentStep === 2) {
+                    initializeLoveLetter();
+                }
+            } else {
+                nextButton.style.display = 'none';
+                celebrateButton.style.display = 'inline-block';
+            }
+        });
+
+        submitMemory.addEventListener('click', () => {
+            const memory = memoryInput.value;
+            if (memory) {
+                alert(`That's a beautiful memory! I love that you remember ${memory}. It means so much to me too!`);
+                nextButton.click();
+            } else {
+                alert('Please share a memory with me!');
+            }
+        });
+
+        celebrateButton.addEventListener('click', () => {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        });
+
+        function initializeLoveLetter() {
+            const words = [
+                'heart', 'forever', 'smile', 'laugh', 'joy',
+                'beautiful', 'amazing', 'wonderful', 'precious', 'cherish',
+                'adore', 'treasure', 'soulmate', 'adventure',
+                'memories',  'together', 'always'
+            ];
+
+            words.forEach(word => {
+                const button = document.createElement('button');
+                button.textContent = word;
+                button.classList.add('love-letter-option');
+                button.addEventListener('click', () => addToLetter(word));
+                loveLetterOptions.appendChild(button);
+            });
+        }
+
+        function addToLetter(word) {
+            const currentText = generatedLetter.textContent;
+            generatedLetter.textContent = currentText ? `${currentText} ${word}` : word;
+        }
+
+        generateCompliment.addEventListener('click', () => {
+            const adjectives = ['dazzling', 'spectacular', 'mind-blowing', 'earth-shattering', 'jaw-dropping'];
+            const nouns = ['unicorn', 'superhero', 'rock star', 'ninja', 'wizard'];
+            const actions = ['conquers mountains', 'tames wild beasts', 'makes rainbows jealous', 'outshines the sun', 'defies gravity'];
+
+            const randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+            const randomNoun = nouns[Math.floor(Math.random() * nouns.length)];
+            const randomAction = actions[Math.floor(Math.random() * actions.length)];
+
+            const compliment = `You are a ${randomAdjective} ${randomNoun} who ${randomAction}!`;
+            sillyCompliment.textContent = compliment;
+
+            confetti({
+                particleCount: 50,
+                spread: 60,
+                origin: { y: 0.8 }
+            });
+        });
+
+        imageInput.addEventListener('change', handleImageUpload);
+        pasteArea.addEventListener('paste', handleImagePaste);
+
+        function handleImageUpload(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    uploadedImage.src = event.target.result;
+                    uploadedImage.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function handleImagePaste(e) {
+            e.preventDefault();
+            const items = (e.clipboardData || e.originalEvent.clipboardData).items;
+            for (let item of items) {
+                if (item.type.indexOf('image') !== -1) {
+                    const blob = item.getAsFile();
+                    const reader = new FileReader();
+                    reader.onload = function(event) {
+                        uploadedImage.src = event.target.result;
+                        uploadedImage.style.display = 'block';
+                    };
+                    reader.readAsDataURL(blob);
+                }
+            }
+        }
+
+        submitImage.addEventListener('click', () => {
+            if (uploadedImage.src) {
+                nextButton.click();
+                showFinalWishes();
+            } else {
+                alert('Please upload or paste an image first!');
+            }
+        });
+
+        function showFinalWishes() {
+            const wishes = [
+                "Happy Birthday to the most amazing person in my life!",
+                "Wishing you a day filled with love, laughter, and unforgettable moments!",
+                "May your birthday be as special and wonderful as you are!",
+                "Here's to another year of adventures together. Happy Birthday, ",
+                "You make every day feel like a celebration. Happy Birthday!"
+            ];
+            const emotesList = ["❤️", "🎉", "🎂", "🥳", "✨", "💖", "🌟", "🎈", "🎁", "😘"];
+
+            const randomWish = wishes[Math.floor(Math.random() * wishes.length)];
+            birthdayWishes.textContent = randomWish;
+
+            const randomEmotes = Array(5).fill().map(() => emotesList[Math.floor(Math.random() * emotesList.length)]).join(" ");
+            emotes.textContent = randomEmotes;
+
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        }
+    </script>
+    </body>
+</html>
